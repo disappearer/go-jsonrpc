@@ -36,15 +36,15 @@ var (
 		Transport: &http.Transport{
 			Proxy: http.ProxyFromEnvironment,
 			DialContext: (&net.Dialer{
-				Timeout:   30 * time.Second,
-				KeepAlive: 30 * time.Second,
+				Timeout:   300 * time.Second,
+				KeepAlive: 300 * time.Second,
 				DualStack: true,
 			}).DialContext,
 			ForceAttemptHTTP2:     true,
 			MaxIdleConns:          100,
 			MaxIdleConnsPerHost:   100,
-			IdleConnTimeout:       90 * time.Second,
-			TLSHandshakeTimeout:   10 * time.Second,
+			IdleConnTimeout:       900 * time.Second,
+			TLSHandshakeTimeout:   100 * time.Second,
 			ExpectContinueTimeout: 1 * time.Second,
 		},
 	}
